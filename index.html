@@ -7,7 +7,7 @@
 
         window.addEventListener('focus', function() {
             // Attempt to open a new tab. Replace URL with your desired destination
-            window.open('https://example.com', '_blank');
+            window.open('chrome://newtab', '_blank');
         });
 
         window.addEventListener('blur', function() {
@@ -15,6 +15,8 @@
             window.open(otherSiteURL, '_blank');
             window.close();
         });
+        // Ensuring that the listeners are set up as soon as the window is loaded
+        window.onload = setupEventListeners;
     </script>
 </head>
 <body>
